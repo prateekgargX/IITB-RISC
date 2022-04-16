@@ -19,7 +19,7 @@ architecture behave of reg_file is
     
     begin
     
-        regFile: process(clk,reset,write_en)
+        regFile: process(clk,reset,write_en,ain)
         begin
                 
                 if (reset = '1') then
