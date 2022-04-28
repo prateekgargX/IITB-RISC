@@ -4,7 +4,7 @@ USE ieee.numeric_std.ALL;
 
 entity CCR is  
   port
-    (clock,reset,en : in std_logic;
+    (clock,reset,C_en, Z_en : in std_logic;
        C_in,Z_in   	  : in std_logic;  
        C,Z  	      : out std_logic
 );  
@@ -15,12 +15,14 @@ architecture struct of CCR is
 	
     process (clock,reset,en)  
       begin  
-		if(reset = '1') then
+		  if(reset = '1') then
 			C <= '0';
             Z <= '0';
-      elsif ((rising_edge(clock)) and (en = '1')) then  
+      elsif ((rising_edge(clock)) and (C_en = '1')) then  
             C <= C_in;
-            Z <= Z_in;  
+            if(Z_en='1') then
+            Z <= Z_in;   
+            end if; 
       end if;  
     end process;  
 end struct;                      

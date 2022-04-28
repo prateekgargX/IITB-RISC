@@ -7,23 +7,23 @@ use ieee.std_logic_1164.all;
 
 -----------------------------------------------
 entity exec_unit is ---input is decoded control signals, output is IRE and Flags
-	port( ir_en ,bit_en,xor_a_co, xor_b_co1, xor_b_co2,rf_a1_co, din_co, --7
-	pc_en, pc_co, --2
-	mem_a_co, wr_en, --2
-	alu_a1,alu_a2,alu_b1,alu_b2 , alu_code, --5
-	rfd3_co1,rfd3_co2, rfa3_co1,rfa3_co2, rf_wren, --4
-	t1_en,c_en,z_en,t2_en,t3_en,t4_en,t5_en,t2_co,t4_co1,t4_co2,t3_co1,t3_co2,clock,reset: in std_logic; --9
+	port(
+    --alu control
+    alu_a,alu_b,alu_c,B_1,B_0,
+    --t1 control
+    t1_a,t1_b,
+    --RF control
+    RF_a,RF_b,RF_c,
+    --ao control
+    ao_a,ao_b,
+    din_e,dout_e,
+    ,clock,reset: in std_logic; --9
 	c,z: out std_logic;
 	ire_inst: out std_logic_vector(15 downto 0)
 	);
 end entity;
 
 architecture behave of exec_unit is
--------------------------------------------------
-signal c_in,c_out_s,z_out_s, z_in : std_logic ;
-signal rf_a3_inp, decode_in, rf_a1_inp: std_logic_vector(2 downto 0);
-signal rf_d1_s,rf_d2_s, mem_d,decode_out, t1,t2,t3,alu_out_s,din_inp,t4_in,mem_a_in, xor_a_in, xor_b_in, xor_out,alu_b_final_in, t4,t5,t2_inp,t3_inp,pc_inp, pc_out, rf_d3_inp,se6_s, se9_s, alu_a_in,alu_b_in, tz7_out, ir_out :std_logic_vector(15 downto 0);
-signal alu_a12, alu_b12,t4_co,t3_co, rfa3_co,rfd3_co, xor_b_co : std_logic_vector(1 downto 0);
 ---------------------------------------------------
 ------------------COMPONENT-INSTANTIATION----------
 component ALU is
@@ -136,6 +136,12 @@ port(en : in std_logic;
 end component inverter_16;
 
 ---------------------------------------------------
+
+---------------------------------------------------
+signal c_in,c_out_s,z_out_s, z_in : std_logic ;
+signal rf_a3_inp, decode_in, rf_a1_inp: std_logic_vector(2 downto 0);
+signal rf_d1_s,rf_d2_s, mem_d,decode_out, t1,t2,t3,alu_out_s,din_inp,t4_in,mem_a_in, xor_a_in, xor_b_in, xor_out,alu_b_final_in, t4,t5,t2_inp,t3_inp,pc_inp, pc_out, rf_d3_inp,se6_s, se9_s, alu_a_in,alu_b_in, tz7_out, ir_out :std_logic_vector(15 downto 0);
+signal alu_a12, alu_b12,t4_co,t3_co, rfa3_co,rfd3_co, xor_b_co : std_logic_vector(1 downto 0);
 ---------------------------------------------------
 begin
 --Encoder and Decoder
@@ -215,6 +221,6 @@ c_out <= c_out_s ;
 
 --ALU block
 al_b_mux: mux_2to1 port map(alu_b_in, ("0000000000000001"), bit_en, alu_b_final_in);
-alu_block: alu port map(alu_a_in, alu_b_final_in,alu_code, alu_out_s,z_in,c_in );
+alu_unit: alu port map(alu_a_in, alu_b_final_in,alu_code, alu_out_s,z_in,c_in );
 
 end behave;
