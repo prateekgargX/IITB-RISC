@@ -18,6 +18,7 @@ entity memory IS
 		dout			: OUT std_logic_vector(data_width - 1 DOWNTO 0)
 	);
 end memory;
+--din = what's going into memory, dout = what's being loaded.
 
 architecture behave of memory is
    type memory IS ARRAY(0 TO 127) OF std_logic_vector(data_width - 1 DOWNTO 0);
