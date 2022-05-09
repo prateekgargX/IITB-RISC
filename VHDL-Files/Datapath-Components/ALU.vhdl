@@ -1,4 +1,4 @@
--- library IEEE;
+library IEEE;
 use IEEE.STD_LOGIC_1164.all;      
 use ieee.numeric_std.all;
 -- ALU 
@@ -23,7 +23,7 @@ begin
 
 alu_proc : process (alu_a,alu_b,op_code,c) is
     begin
-        if (op_code='0') then --add
+        if (op_code='1') then --add
 		  c <= std_logic_vector(resize(unsigned(alu_a),17) + resize(unsigned(alu_b),17));
 		  c_out<=c(16);
 		  z_out<= not( c(0) or c(1) or c(2) or c(3) or c(4) or c(5) or c(6) or c(7) or c(8) or c(9) or c(10) or c(11) or c(12) or c(13) or c(14) or c(15));

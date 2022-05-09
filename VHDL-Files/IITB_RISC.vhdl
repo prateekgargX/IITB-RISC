@@ -11,60 +11,54 @@ entity IITB_RISC is
 end entity;
 ------------------------------
 architecture struct of IITB_RISC is
+signal c,z,ov,LS: std_logic; 
+signal ire: std_logic_vector(15 downto 0);
+signal fsm_v: std_logic_vector(25 downto 0);
+		
 
-signal cout,zout : std_logic ;
-signal xout,irout : std_logic_vector(15 downto 0) ;
-
-signal sir_en ,sbit_en,sxor_a_co, sxor_b_co1, sxor_b_co2,srf_a1_co, sdin_co,spc_en, 
-spc_co,smem_a_co, swr_en,salu_a1,salu_a2,salu_b1,salu_b2 , salu_code,srfd3_co1,srfd3_co2,srfa3_co1,srfa3_co2, srf_wren,
-st1_en,sc_en,sz_en,
-st2_en,st3_en,st4_en,st5_en,st2_co,st4_co1,st4_co2 ,st3_co1,st3_co2 : std_logic;
-
-component Datapath is 
-	port( ir_en ,bit_en,xor_a_co, xor_b_co1, xor_b_co2,rf_a1_co, din_co, --7
-		pc_en, pc_co, --2
-		mem_a_co, wr_en, --2
-		alu_a1,alu_a2,alu_b1,alu_b2 , alu_code, --5
-		rfd3_co1,rfd3_co2, rfa3_co1,rfa3_co2, rf_wren, --4
-		t1_en,c_en,z_en,t2_en,t3_en,t4_en,t5_en,t2_co,t4_co1,t4_co2,t3_co1,t3_co2,clock,reset: in std_logic; --9
-		c_out,z_out: out std_logic;
-		ir_data, xor_out_final: out std_logic_vector(15 downto 0)
+component exec_unit is 
+	port( --alu control-4
+    fsm_op,alu_a_s,alu_b_s0,alu_b_s1, alu_c,
+	 --inv control-2
+	 inv_en,inv_s,                 
+	 --ccr control-2
+	 c_en,z_en,
+    --t1 control-1
+    t1_en,
+	 --t2 control-1
+	 t2_en,
+	 --ir control-1
+	 ir_en,
+    --RF control-8
+    RF_we,din_s0,din_s1,LS_e,ain_s0,ain_s1,ao1_s,ao2_s,
+    --Memory comm-4
+	 dout_en,mem_s,mem_wr_en, mem_a_sel,
+	 --count register control-2                  
+	 count_rst,inc_sig,
+	 --clock,reset global
+	 clock,reset: in std_logic;
+	 --ov is from Count reg, LS for Load Multiple and Store Multiple instructions
+	 c,z,ov,LS: out std_logic; 
+	 ire_instr: out std_logic_vector(15 downto 0)
 	);
-end component Datapath;
+end component exec_unit;
 
-component fsm is port (
-      clock, reset: in std_logic;
-		
-      c_out,z_out: in std_logic;
-		
-		ir_data, xor_out_final: in std_logic_vector(15 downto 0);
-		ir_en ,bit_en,xor_a_co, xor_b_co1, xor_b_co2,rf_a1_co, din_co, 
-	   pc_en, pc_co,                                                  
-	   mem_a_co, wr_en,                                          
-	   alu_a1,alu_a2,alu_b1,alu_b2 , alu_code,                               
-	   rfd3_co1,rfd3_co2,rfa3_co1,rfa3_co2, rf_wren,                                 
-	   t1_en,c_en,z_en,t2_en,t3_en,t4_en,t5_en,t2_co,t4_co1,t4_co2 ,t3_co1,t3_co2: out std_logic
+component state_control is port (
+      reset,clk,c,z,ov,LS: in std_logic; 
+	   ire_inst: in std_logic_vector(15 downto 0);
+		y:out std_logic_vector(25 downto 0)
 		);
-end component fsm;
+end component state_control;
 
 begin
-Datapat : Datapath port map(sir_en ,sbit_en,sxor_a_co, sxor_b_co1, sxor_b_co2,srf_a1_co, sdin_co,
-spc_en, spc_co, smem_a_co, swr_en,
-salu_a1,salu_a2,salu_b1,salu_b2 , salu_code,srfd3_co1,srfd3_co2,srfa3_co1,srfa3_co2, srf_wren,
-st1_en,sc_en,sz_en,
-st2_en,st3_en,st4_en,st5_en,st2_co,st4_co1,st4_co2 ,st3_co1,st3_co2 ,
-clock,reset,
-cout,zout,
-irout,xout) ;
+Datapath : exec_unit port map(fsm_v(0), fsm_v(1), fsm_v(2), fsm_v(3), fsm_v(4), 
+										fsm_v(5), fsm_v(6), fsm_v(7), fsm_v(8), fsm_v(0), 
+										fsm_v(10), fsm_v(11), fsm_v(12), fsm_v(13), fsm_v(14), 
+										fsm_v(15), fsm_v(16), fsm_v(17), fsm_v(18), fsm_v(19), 
+										fsm_v(20), fsm_v(21), fsm_v(22), fsm_v(23), fsm_v(24), 
+										fsm_v(25), clock, reset, c, z, ov, LS, ire) ;
 
-FSM_control: fsm port map (clock,reset,
-cout,zout,
-irout,xout,
-sir_en ,sbit_en,sxor_a_co, sxor_b_co1, sxor_b_co2,srf_a1_co,
- sdin_co,spc_en, spc_co,smem_a_co, swr_en,
- salu_a1,salu_a2,salu_b1,salu_b2 , salu_code,
- srfd3_co1,srfd3_co2,srfa3_co1,srfa3_co2, srf_wren,
-st1_en,sc_en,sz_en,
-st2_en,st3_en,st4_en,st5_en,st2_co,st4_co1,st4_co2 ,st3_co1,st3_co2) ;
+FSM_control: state_control port map (reset,clock, c, z, ov, LS, ire, fsm_v);
+
 
 end struct;

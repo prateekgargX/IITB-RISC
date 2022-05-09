@@ -8,10 +8,10 @@ use ieee.std_logic_1164.all;
 -----------------------------------------------
 entity exec_unit is ---input is decoded control signals, output is IRE and Flags
 	port(
-    --alu control-3
-    alu_op,alu_b_s0,alu_b_s1,
+    --alu control-4
+    fsm_op,alu_a_s,alu_b_s0,alu_b_s1, alu_c,
 	 --inv control-2
-	 inv_en,inv_s                 --JUST INVERTER ENABLE IS ENOUGH
+	 inv_en,inv_s,                 
 	 --ccr control-2
 	 c_en,z_en,
     --t1 control-1
@@ -22,15 +22,15 @@ entity exec_unit is ---input is decoded control signals, output is IRE and Flags
 	 ir_en,
     --RF control-8
     RF_we,din_s0,din_s1,LS_e,ain_s0,ain_s1,ao1_s,ao2_s,
-    --Memory comm-3
-	 dout_en,mem_s,mem_wr_en,
-	 --count register control-2                  --WHERE WERE THESE USED?????
+    --Memory comm-4
+	 dout_en,mem_s,mem_wr_en, mem_a_sel,
+	 --count register control-2                  
 	 count_rst,inc_sig,
 	 --clock,reset global
 	 clock,reset: in std_logic;
 	 --ov is from Count reg, LS for Load Multiple and Store Multiple instructions
 	 c,z,ov,LS: out std_logic; 
-	 ire_inst: out std_logic_vector(15 downto 0)
+	 ire_instr: out std_logic_vector(15 downto 0)
 	);
 end entity;
 
@@ -67,7 +67,7 @@ end component ALU;
 
 component CCR is  
 port
-  (clock,reset,en : in std_logic;
+  (clock,reset,C_en,Z_en : in std_logic;
      C_in,Z_in   	  : in std_logic;  
      C,Z  	      : out std_logic
 );  
@@ -179,138 +179,90 @@ end component inverter_16;
 
 component Count_reg is
 port (
-		reset,clock: in std_logic;
-		y:out std_logic_vector(2 downto 0)
+		count_rst,inc_sig: in std_logic;
+		y:out std_logic_vector(3 downto 0)
 		);
 		
 end component Count_reg;
 
+component demux_2to1_16b is 
+port ( 
+		x:in STD_LOGIC_vector(15 downto 0);
+     sel:in STD_LOGIC;
+     y0, y1 : out STD_LOGIC_vector(15 downto 0)
+  );
+ end component demux_2to1_16b;
+ 
+component mux_2to1_1b is
+port (x0,x1:in STD_LOGIC;
+		sel:in STD_LOGIC;
+		y : out STD_LOGIC
+		);
+end component mux_2to1_1b ;
+
 ---------------------------------------------------
 ------------------SIGNALS-INSTANTIATION------------
 ---------------------------------------------------
-mem_store, mem_a_in, mem_load, alu_out, t1, alu_b, z_out, c_out, c, z, invRb, two, sign_ex6, sign_ex9, do1, do2, din, ao1, ao2, ain, count_out, shifted,
-rg_sel, din_sel,
-rA, rB, rC, r7, 
---WHAT EXACTLY ARE RA, RB, RC (are these addresses from ire_inst? which one is a,b,c?)
---WHERE ARE C AND Z FROM CCR GOING?
-signal c_in,c_out_s,z_out_s, z_in : std_logic ;
-signal rf_a3_inp, decode_in, rf_a1_inp: std_logic_vector(2 downto 0);
-signal rf_d1_s,rf_d2_s, mem_d,decode_out, t1,t2,t3,alu_out_s,din_inp,t4_in,mem_a_in, xor_a_in, xor_b_in, 
-xor_out,alu_b_final_in, t4,t5,t2_inp,t3_inp,pc_inp, pc_out, rf_d3_inp,se6_s, se9_s, alu_a_in,alu_b_in, tz7_out, ir_out :std_logic_vector(15 downto 0);
-signal alu_a12, alu_b12,t4_co,t3_co, rfa3_co,rfd3_co, xor_b_co : std_logic_vector(1 downto 0);
+signal z_out, c_out, alu_op : std_logic;
+signal rA, rB, rC, r7,rg, count_out, ao1, ao2, ain : std_logic_vector(2 downto 0);
+signal mem_store, mem_a_in, mem_load, alu_out, t1, alu_a, alu_b, sign_ex6, sign_ex9,ire_in,ire_inst, do1, do2, din,t2_out, shifted,addr, inv_choice, inverted : std_logic_vector(15 downto 0);
+signal rg_sel,alu_b_sel, din_sel : std_logic_vector(1 downto 0);
+signal cnt_out :std_logic_vector(3 downto 0);
+ 
+
 ---------------------------------------------------
 ---------------------------------------------------
 begin
 ---Memory
-store_reg: reg port map(clock, reset, dout_en, rA, mem_store);
+store_reg: reg port map(clock, reset, dout_en, addr, mem_store);
+mem_a_mux: mux_2to1_16b port map(t2_out, do1, mem_a_sel, addr);
 memory_block: memory port map(clock, mem_store, mem_a_in, mem_wr_en, mem_load);
-mem_demux: mux_2to1 port map(pc_out, t3, mem_a_co,mem_a_in); --[use my netlist, push]
+mem_demux: demux_2to1_16b port map(mem_load, mem_s, ire_in, din); 
 
 ---ALU and friends
 t1_block: reg port map(clock,reset,t1_en, alu_out,t1);
-ALunit: ALU port map(rA, alu_b, alu_op, alu_out, z_out, c_out);               --over here rA = value stored in reg A
-flag_unit: CCR port map(clock, reset, C_en, Z_en, C_out, Z_out, c, z);
-alu_b_sel(0)<= alu_b_s0;
-alu_b_sel(1)<= alu_b_s1;
-Balu_mux: mux_4to1_16 port map(invRb, two, sign_ex6, sign_ex9, alu_b_sel, alu_b); 
-
-inv1: inverter_16 port map(inv_en, ("0000000000000010"), minus2);
-inv2: inverter_16 port map(inv_en, rB, invR);
+ALunit: ALU port map(alu_a, alu_b, alu_op, alu_out, z_out, c_out);
+opmux: mux_2to1_1b port map(ire_inst(3), fsm_op, alu_c, alu_op);              
+flag_unit: CCR port map(clock, reset, C_en, Z_en, c_out, z_out, c, z);
+alu_b_sel(0) <= alu_b_s0;
+alu_b_sel(1) <= alu_b_s1;
+Aalu_mux: mux_2to1_16b port map(do1, do2, alu_a_s, alu_a);
+Balu_mux: mux_4to1_16b port map(inverted, t2_out, sign_ex6, sign_ex9, alu_b_sel, alu_b); 
+inv_mux: mux_2to1_16b port map(do2, ("0000000000000010"), inv_s, inv_choice);      --rb vs +2
+inv1: inverter_16 port map(inv_en, inv_choice, inverted);
+ire_instr <= ire_inst;
 sign_ex6_16: sign_extend_6_16 port map(ire_inst(5 downto 0), sign_ex6);
 sign_ex9_16: sign_extend_9_16 port map(ire_inst(8 downto 0), sign_ex9);
 
 --IRE
-ir: reg port map(clock, reset, ir_en, mem_load, ire_inst); --is mem_load right?
+ir: reg port map(clock, reset, ir_en, ire_in, ire_inst);
 
 --Temp Reg
-t2_block: reg port map(clock,reset,t2_en, --alu_out,t1); WHAT HERE (for LM, SM...?)
+t2_block: reg port map(clock,reset,t2_en, do1, t2_out);
 
 --Register File
-----WHAT ARE RA, RB, RC. HOW WILL WE PICK R7?
+r7<= "111";
+rA<=ire_inst(6 downto 4);
+rB<=ire_inst(9 downto 7);
+rC<=ire_inst(12 downto 10);
 RegisterFile: reg_file port map(do1, do2, din, RF_we, reset, ao1, ao2, ain, clock);
-ao1_mux: mux_2to1_3b port map(r7, rA, ao1_s, ao1);                                     --here, rA = address of reg A...?
+ao1_mux: mux_2to1_3b port map(r7, rA, ao1_s, ao1);                                     
 ao2_mux: mux_2to1_3b port map(rB, count_out, ao2_s, ao2); 
-ain_mux: mux_2to1_3b port map(count_out, rg, LS_e, ain);
-r7<="111"
+ain_mux: mux_2to1_3b port map(rg, count_out, LS_e, ain);
+r7<="111";
 rg_sel(0)<=ain_s0;
 rg_sel(1)<=ain_s1;
 rg_mux: mux_4to1_3b port map(rA, rB, rC, r7, rg_sel, rg);
 din_sel(0)<=din_s0;
 din_sel(1)<=din_s1;
-din_mux: mux_4to1_16b port map(t1, shifted, do1, do2, din_sel, din);
-count: count_reg port map(clock, reset, count_out)                       --doesn't this need ov? what's LS in output???
+din_mux: mux_4to1_16b port map(t1, shifted, do1, din, din_sel, din);
+count: count_reg port map(count_rst, inc_sig, cnt_out);
+ov<=cnt_out(3);
+count_out<= cnt_out(2 downto 0);                       
 shft: shifter7 port map(ire_inst(8 downto 0), shifted);
 
+--Bits for LS
+LSbit: mux_8to1_1b port map(ire_inst(15 downto 8), count_out, LS);
 
-
-
-
-
-
-
-
-
-
-
-
-
----Temp_Registers and Flag Registers
-t1_block: reg port map(clock,reset,t1_en, alu_out,t1);
-t2_mux: mux_2to1 port map(rf_d2_s, mem_d,t2_co,t2_inp);
-t2_block: reg port map(clock,reset,t2_en,t2_inp,t2);
-
---t3_mux: mux_2to1 port map(alu_out_s, mem_d,t3_co,t3_inp);
-t3_co(0)<= t3_co2;
-t3_co(1)<=t3_co1;
-t3_mux: mux_4to1 port map(alu_out_s, mem_d,t1,t1,t3_co,t3_inp);
-
-t3_block: reg port map(clock,reset,t3_en,t3_inp,t3);
-
-t4_co(0)<= t4_co2;
-t4_co(1)<=t4_co1;
-t4_mux: mux_4to1 port map(rf_d1_s,xor_out,se9_s,se9_s,t4_co,t4_in);
-t4_block: reg port map(clock,reset,t4_en,t4_in,t4);
-
-t5_block: reg port map(clock,reset,t5_en,decode_out,t5);
-
---------------Signals for mux
-alu_a12(0)<=alu_a1;
-alu_a12(1)<=alu_a2;
-alu_b12(0)<=alu_b1;
-alu_b12(1)<=alu_b2;
--- ALU
-alu_a_mux: mux_4to1 port map(se6_s,t1, pc_out, t3, alu_a12, alu_a_in );
-alu_b_mux: mux_4to1 port map(se9_s, se6_s, t1, t2, alu_b12, alu_b_in );
-
---XOR Block
-xor_b_co(0)<=xor_b_co1;
-xor_b_co(1)<=xor_b_co2;
-xorblock: xor_block port map(xor_a_in,xor_b_in,xor_out);
-xor_a_mux: mux_2to1 port map(t1,t4,xor_a_co,xor_a_in);
-xor_b_mux: mux_4to1 port map(t2,t5,("0000000000000000"),("0000000000000000"),xor_b_co,xor_b_in);
-xor_out_final<=xor_out;
-
-rfa3_co(0)<= rfa3_co2;
-rfa3_co(1)<=rfa3_co1;
-
-rfd3_co(0)<= rfd3_co2;
-rfd3_co(1)<=rfd3_co1;
-
---Reg File
-reg_1_mux: mux_4to1_3bit port map(ir_out(5 downto 3), ir_out(11 downto 9), decode_in,decode_in, rfa3_co, rf_a3_inp);
-reg_2_mux: mux_4to1 port map(t3, tz7_out,t2,pc_out, rfd3_co, rf_d3_inp);
-
-reg_file_block: Reg_file port map (rf_a1_inp,ir_out(8 downto 6),rf_a3_inp,rf_d1_s,rf_d2_s,rf_d3_inp,rf_wren, clock,reset);
-reg_3_mux: mux_2to1_3bit port map(ir_out(11 downto 9), decode_in, rf_a1_co,rf_a1_inp);
-
----TZ7
-Trail_block : TrailZeroes7 port map ( ir_out(8 downto 0), tz7_out) ;
-ir_data<= ir_out  ;
-z_out <= z_out_s ;
-c_out <= c_out_s ;
-
---ALU block
-al_b_mux: mux_2to1 port map(alu_b_in, ("0000000000000001"), bit_en, alu_b_final_in);
-alu_unit: alu port map(alu_a_in, alu_b_final_in,alu_code, alu_out_s,z_in,c_in );
 
 end behave;

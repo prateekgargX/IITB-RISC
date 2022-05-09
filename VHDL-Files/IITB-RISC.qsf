@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE 5M1270ZT144C5
-set_global_assignment -name TOP_LEVEL_ENTITY "IITB-RISC"
+set_global_assignment -name TOP_LEVEL_ENTITY IITB_RISC
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:59:08  APRIL 30, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -74,3 +74,5 @@ set_global_assignment -name VHDL_FILE "Datapath-Components/ALU.vhdl"
 set_global_assignment -name VHDL_FILE "Datapath-Components/mux_4to1_3b.vhd"
 set_global_assignment -name VHDL_FILE "Datapath-Components/mux_8to1_16b.vhd"
 set_global_assignment -name VHDL_FILE "Datapath-Components/count_reg.vhdl"
+set_global_assignment -name VHDL_FILE "Datapath-Components/demux_2to1_16b.vhd"
+set_global_assignment -name VHDL_FILE "Datapath-Components/mux_2to1_1b.vhd"
