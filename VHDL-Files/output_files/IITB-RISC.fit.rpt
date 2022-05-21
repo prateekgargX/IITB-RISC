@@ -1,5 +1,5 @@
 Fitter report for IITB-RISC
-Sun May 08 23:58:09 2022
+Sun May 22 03:11:40 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -49,7 +49,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------+
 ; Fitter Summary                                                      ;
 +-----------------------+---------------------------------------------+
-; Fitter Status         ; Successful - Sun May 08 23:58:09 2022       ;
+; Fitter Status         ; Successful - Sun May 22 03:11:40 2022       ;
 ; Quartus Prime Version ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name         ; IITB-RISC                                   ;
 ; Top-level Entity Name ; IITB_RISC                                   ;
@@ -131,7 +131,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/output_files/IITB-RISC.pin.
+The pin-out file can be found in C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/output_files/IITB-RISC.pin.
 
 
 +------------------------------------------------------------------+
@@ -483,20 +483,20 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/output_files/IITB-RISC.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/output_files/IITB-RISC.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5071 megabytes
-    Info: Processing ended: Sun May 08 23:58:09 2022
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 5070 megabytes
+    Info: Processing ended: Sun May 22 03:11:40 2022
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/output_files/IITB-RISC.fit.smsg.
+The suppressed messages can be found in C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/output_files/IITB-RISC.fit.smsg.
 
 

@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
  
-entity mux_2to1_16b is
+entity mux_2to1_1b is
  port(
  
      x0,x1:in STD_LOGIC;

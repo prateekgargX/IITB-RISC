@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IITB-RISC
-Sun May 08 23:58:04 2022
+Sun May 22 03:11:37 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -46,7 +46,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun May 08 23:58:04 2022       ;
+; Analysis & Synthesis Status ; Successful - Sun May 22 03:11:37 2022       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; IITB-RISC                                   ;
 ; Top-level Entity Name       ; IITB_RISC                                   ;
@@ -145,32 +145,32 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                            ;
-+-------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path          ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                            ; Library ;
-+-------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
-; Datapath-Components/mux_8to1_1b.vhd       ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_8to1_1b.vhd       ;         ;
-; Datapath-Components/mux_4to1_16b.vhd      ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_16b.vhd      ;         ;
-; Datapath-Components/mux_2to1_16b.vhd      ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_16b.vhd      ;         ;
-; Datapath-Components/mux_2to1_3b.vhd       ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_3b.vhd       ;         ;
-; state_control.vhdl                        ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/state_control.vhdl                        ;         ;
-; IITB_RISC.vhdl                            ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/IITB_RISC.vhdl                            ;         ;
-; exec_unit.vhdl                            ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl                            ;         ;
-; Datapath-Components/sign_extend_9_16.vhdl ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_9_16.vhdl ;         ;
-; Datapath-Components/sign_extend_6_16.vhdl ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_6_16.vhdl ;         ;
-; Datapath-Components/shifter7.vhdl         ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/shifter7.vhdl         ;         ;
-; Datapath-Components/reg_file.vhdl         ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/reg_file.vhdl         ;         ;
-; Datapath-Components/reg.vhdl              ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/reg.vhdl              ;         ;
-; Datapath-Components/memory.vhdl           ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/memory.vhdl           ;         ;
-; Datapath-Components/inverter_16.vhdl      ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/inverter_16.vhdl      ;         ;
-; Datapath-Components/CCR.vhdl              ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/CCR.vhdl              ;         ;
-; Datapath-Components/ALU.vhdl              ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/ALU.vhdl              ;         ;
-; Datapath-Components/mux_4to1_3b.vhd       ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_3b.vhd       ;         ;
-; Datapath-Components/count_reg.vhdl        ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/count_reg.vhdl        ;         ;
-; Datapath-Components/demux_2to1_16b.vhd    ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/demux_2to1_16b.vhd    ;         ;
-; Datapath-Components/mux_2to1_1b.vhd       ; yes             ; User VHDL File  ; C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_1b.vhd       ;         ;
-+-------------------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++-------------------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path          ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                          ; Library ;
++-------------------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
+; state_control.vhdl                        ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/state_control.vhdl                        ;         ;
+; IITB_RISC.vhdl                            ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/IITB_RISC.vhdl                            ;         ;
+; exec_unit.vhdl                            ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl                            ;         ;
+; Datapath-Components/sign_extend_9_16.vhdl ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_9_16.vhdl ;         ;
+; Datapath-Components/sign_extend_6_16.vhdl ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_6_16.vhdl ;         ;
+; Datapath-Components/shifter7.vhdl         ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/shifter7.vhdl         ;         ;
+; Datapath-Components/reg_file.vhdl         ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/reg_file.vhdl         ;         ;
+; Datapath-Components/reg.vhdl              ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/reg.vhdl              ;         ;
+; Datapath-Components/mux_8to1_1b.vhdl      ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_8to1_1b.vhdl      ;         ;
+; Datapath-Components/mux_4to1_16b.vhdl     ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_16b.vhdl     ;         ;
+; Datapath-Components/mux_4to1_3b.vhdl      ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_3b.vhdl      ;         ;
+; Datapath-Components/mux_2to1_16b.vhdl     ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_16b.vhdl     ;         ;
+; Datapath-Components/mux_2to1_3b.vhdl      ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_3b.vhdl      ;         ;
+; Datapath-Components/mux_2to1_1b.vhdl      ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_1b.vhdl      ;         ;
+; Datapath-Components/memory.vhdl           ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/memory.vhdl           ;         ;
+; Datapath-Components/inverter_16.vhdl      ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/inverter_16.vhdl      ;         ;
+; Datapath-Components/demux_2to1_16b.vhdl   ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/demux_2to1_16b.vhdl   ;         ;
+; Datapath-Components/count_reg.vhdl        ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/count_reg.vhdl        ;         ;
+; Datapath-Components/CCR.vhdl              ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/CCR.vhdl              ;         ;
+; Datapath-Components/ALU.vhdl              ; yes             ; User VHDL File  ; C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/ALU.vhdl              ;         ;
++-------------------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -283,106 +283,112 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun May 08 23:57:39 2022
+    Info: Processing started: Sun May 22 03:11:20 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-RISC -c IITB-RISC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_8to1_1b.vhd
-    Info (12022): Found design unit 1: mux_8to1_1b-Behavioral File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_8to1_1b.vhd Line: 11
-    Info (12023): Found entity 1: mux_8to1_1b File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_8to1_1b.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_4to1_16b.vhd
-    Info (12022): Found design unit 1: mux_4to1_16b-Behavioral File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_16b.vhd Line: 13
-    Info (12023): Found entity 1: mux_4to1_16b File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_16b.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_2to1_16b.vhd
-    Info (12022): Found design unit 1: mux_2to1_16b-Behavioral File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_16b.vhd Line: 13
-    Info (12023): Found entity 1: mux_2to1_16b File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_16b.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_2to1_3b.vhd
-    Info (12022): Found design unit 1: mux_2to1_3b-Behavioral File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_3b.vhd Line: 13
-    Info (12023): Found entity 1: mux_2to1_3b File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_3b.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file state_control.vhdl
-    Info (12022): Found design unit 1: state_control-behav File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/state_control.vhdl Line: 13
-    Info (12023): Found entity 1: state_control File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/state_control.vhdl Line: 4
+    Info (12022): Found design unit 1: state_control-behav File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/state_control.vhdl Line: 13
+    Info (12023): Found entity 1: state_control File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/state_control.vhdl Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file iitb_risc.vhdl
-    Info (12022): Found design unit 1: IITB_RISC-struct File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 13
-    Info (12023): Found entity 1: IITB_RISC File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 9
+    Info (12022): Found design unit 1: IITB_RISC-struct File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 13
+    Info (12023): Found entity 1: IITB_RISC File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file exec_unit.vhdl
-    Info (12022): Found design unit 1: exec_unit-behave File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 37
-    Info (12023): Found entity 1: exec_unit File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 9
+    Info (12022): Found design unit 1: exec_unit-behave File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 37
+    Info (12023): Found entity 1: exec_unit File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/xor_16.vhdl
+    Info (12022): Found design unit 1: xor_16-Struct File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/xor_16.vhdl Line: 15
+    Info (12023): Found entity 1: xor_16 File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/xor_16.vhdl Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/sign_extend_9_16.vhdl
-    Info (12022): Found design unit 1: sign_extend_9_16-Struct File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_9_16.vhdl Line: 14
-    Info (12023): Found entity 1: sign_extend_9_16 File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_9_16.vhdl Line: 8
+    Info (12022): Found design unit 1: sign_extend_9_16-Struct File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_9_16.vhdl Line: 14
+    Info (12023): Found entity 1: sign_extend_9_16 File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_9_16.vhdl Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/sign_extend_6_16.vhdl
-    Info (12022): Found design unit 1: sign_extend_6_16-Struct File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_6_16.vhdl Line: 14
-    Info (12023): Found entity 1: sign_extend_6_16 File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_6_16.vhdl Line: 8
+    Info (12022): Found design unit 1: sign_extend_6_16-Struct File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_6_16.vhdl Line: 14
+    Info (12023): Found entity 1: sign_extend_6_16 File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/sign_extend_6_16.vhdl Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/shifter7.vhdl
-    Info (12022): Found design unit 1: shifter7-Struct File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/shifter7.vhdl Line: 14
-    Info (12023): Found entity 1: shifter7 File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/shifter7.vhdl Line: 8
+    Info (12022): Found design unit 1: shifter7-Struct File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/shifter7.vhdl Line: 14
+    Info (12023): Found entity 1: shifter7 File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/shifter7.vhdl Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/reg_file.vhdl
-    Info (12022): Found design unit 1: reg_file-behave File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/reg_file.vhdl Line: 15
-    Info (12023): Found entity 1: reg_file File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/reg_file.vhdl Line: 5
+    Info (12022): Found design unit 1: reg_file-behave File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/reg_file.vhdl Line: 15
+    Info (12023): Found entity 1: reg_file File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/reg_file.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/reg.vhdl
-    Info (12022): Found design unit 1: reg-struct File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/reg.vhdl Line: 12
-    Info (12023): Found entity 1: reg File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/reg.vhdl Line: 5
+    Info (12022): Found design unit 1: reg-struct File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/reg.vhdl Line: 12
+    Info (12023): Found entity 1: reg File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/reg.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_8to1_16b.vhdl
+    Info (12022): Found design unit 1: mux_8to1_16-Behavioral File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_8to1_16b.vhdl Line: 13
+    Info (12023): Found entity 1: mux_8to1_16 File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_8to1_16b.vhdl Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_8to1_1b.vhdl
+    Info (12022): Found design unit 1: mux_8to1_1b-Behavioral File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_8to1_1b.vhdl Line: 11
+    Info (12023): Found entity 1: mux_8to1_1b File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_8to1_1b.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_4to1_16b.vhdl
+    Info (12022): Found design unit 1: mux_4to1_16b-Behavioral File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_16b.vhdl Line: 13
+    Info (12023): Found entity 1: mux_4to1_16b File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_16b.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_4to1_3b.vhdl
+    Info (12022): Found design unit 1: mux_4to1_3b-Behavioral File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_3b.vhdl Line: 13
+    Info (12023): Found entity 1: mux_4to1_3b File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_3b.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_2to1_16b.vhdl
+    Info (12022): Found design unit 1: mux_2to1_16b-Behavioral File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_16b.vhdl Line: 13
+    Info (12023): Found entity 1: mux_2to1_16b File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_16b.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_2to1_3b.vhdl
+    Info (12022): Found design unit 1: mux_2to1_3b-Behavioral File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_3b.vhdl Line: 13
+    Info (12023): Found entity 1: mux_2to1_3b File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_3b.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_2to1_1b.vhdl
+    Info (12022): Found design unit 1: mux_2to1_1b-Behavioral File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_1b.vhdl Line: 13
+    Info (12023): Found entity 1: mux_2to1_1b File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_1b.vhdl Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/memory.vhdl
-    Info (12022): Found design unit 1: memory-behave File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/memory.vhdl Line: 23
-    Info (12023): Found entity 1: memory File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/memory.vhdl Line: 5
+    Info (12022): Found design unit 1: memory-behave File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/memory.vhdl Line: 23
+    Info (12023): Found entity 1: memory File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/memory.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/inverter_16.vhdl
-    Info (12022): Found design unit 1: inverter_16-struct File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/inverter_16.vhdl Line: 12
-    Info (12023): Found entity 1: inverter_16 File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/inverter_16.vhdl Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/ccr.vhdl
-    Info (12022): Found design unit 1: CCR-struct File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/CCR.vhdl Line: 13
-    Info (12023): Found entity 1: CCR File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/CCR.vhdl Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/alu.vhdl
-    Info (12022): Found design unit 1: ALU-behave File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/ALU.vhdl Line: 18
-    Info (12023): Found entity 1: ALU File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/ALU.vhdl Line: 8
-Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_4to1_3b.vhd
-    Info (12022): Found design unit 1: mux_4to1_3b-Behavioral File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_3b.vhd Line: 13
-    Info (12023): Found entity 1: mux_4to1_3b File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_4to1_3b.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_8to1_16b.vhd
-    Info (12022): Found design unit 1: mux_8to1_16-Behavioral File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_8to1_16b.vhd Line: 13
-    Info (12023): Found entity 1: mux_8to1_16 File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_8to1_16b.vhd Line: 6
+    Info (12022): Found design unit 1: inverter_16-struct File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/inverter_16.vhdl Line: 12
+    Info (12023): Found entity 1: inverter_16 File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/inverter_16.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/instr_reg.vhdl
+    Info (12022): Found design unit 1: instr_reg-struct File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/Instr_reg.vhdl Line: 12
+    Info (12023): Found entity 1: instr_reg File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/Instr_reg.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/demux_2to1_16b.vhdl
+    Info (12022): Found design unit 1: demux_2to1_16b-Behavioral File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/demux_2to1_16b.vhdl Line: 12
+    Info (12023): Found entity 1: demux_2to1_16b File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/demux_2to1_16b.vhdl Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/count_reg.vhdl
-    Info (12022): Found design unit 1: Count_reg-behav File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/count_reg.vhdl Line: 12
-    Info (12023): Found entity 1: Count_reg File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/count_reg.vhdl Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/demux_2to1_16b.vhd
-    Info (12022): Found design unit 1: demux_2to1_16b-Behavioral File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/demux_2to1_16b.vhd Line: 12
-    Info (12023): Found entity 1: demux_2to1_16b File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/demux_2to1_16b.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/mux_2to1_1b.vhd
-    Info (12022): Found design unit 1: mux_2to1_1b-Behavioral File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_1b.vhd Line: 13
-    Info (12023): Found entity 1: mux_2to1_1b File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/mux_2to1_1b.vhd Line: 4
+    Info (12022): Found design unit 1: Count_reg-behav File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/count_reg.vhdl Line: 12
+    Info (12023): Found entity 1: Count_reg File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/count_reg.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/ccr.vhdl
+    Info (12022): Found design unit 1: CCR-struct File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/CCR.vhdl Line: 13
+    Info (12023): Found entity 1: CCR File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/CCR.vhdl Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file datapath-components/alu.vhdl
+    Info (12022): Found design unit 1: ALU-behave File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/ALU.vhdl Line: 18
+    Info (12023): Found entity 1: ALU File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/ALU.vhdl Line: 8
 Info (12127): Elaborating entity "IITB_RISC" for the top level hierarchy
-Info (12128): Elaborating entity "exec_unit" for hierarchy "exec_unit:Datapath" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 54
-Warning (10541): VHDL Signal Declaration warning at exec_unit.vhdl(208): used implicit default value for signal "mem_a_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 208
-Info (12128): Elaborating entity "reg" for hierarchy "exec_unit:Datapath|reg:store_reg" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 217
-Info (12128): Elaborating entity "mux_2to1_16b" for hierarchy "exec_unit:Datapath|mux_2to1_16b:mem_a_mux" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 218
-Info (12128): Elaborating entity "memory" for hierarchy "exec_unit:Datapath|memory:memory_block" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 219
-Info (12128): Elaborating entity "demux_2to1_16b" for hierarchy "exec_unit:Datapath|demux_2to1_16b:mem_demux" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 220
-Info (12128): Elaborating entity "ALU" for hierarchy "exec_unit:Datapath|ALU:ALunit" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 224
-Warning (10631): VHDL Process Statement warning at ALU.vhdl(24): inferring latch(es) for signal or variable "c_out", which holds its previous value in one or more paths through the process File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/ALU.vhdl Line: 24
-Info (10041): Inferred latch for "c_out" at ALU.vhdl(24) File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/Datapath-Components/ALU.vhdl Line: 24
-Info (12128): Elaborating entity "mux_2to1_1b" for hierarchy "exec_unit:Datapath|mux_2to1_1b:opmux" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 225
-Info (12128): Elaborating entity "CCR" for hierarchy "exec_unit:Datapath|CCR:flag_unit" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 226
-Info (12128): Elaborating entity "mux_4to1_16b" for hierarchy "exec_unit:Datapath|mux_4to1_16b:Balu_mux" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 230
-Info (12128): Elaborating entity "inverter_16" for hierarchy "exec_unit:Datapath|inverter_16:inv1" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 232
-Info (12128): Elaborating entity "sign_extend_6_16" for hierarchy "exec_unit:Datapath|sign_extend_6_16:sign_ex6_16" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 234
-Info (12128): Elaborating entity "sign_extend_9_16" for hierarchy "exec_unit:Datapath|sign_extend_9_16:sign_ex9_16" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 235
-Info (12128): Elaborating entity "reg_file" for hierarchy "exec_unit:Datapath|reg_file:RegisterFile" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 248
-Info (12128): Elaborating entity "mux_2to1_3b" for hierarchy "exec_unit:Datapath|mux_2to1_3b:ao1_mux" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 249
-Info (12128): Elaborating entity "mux_4to1_3b" for hierarchy "exec_unit:Datapath|mux_4to1_3b:rg_mux" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 255
-Info (12128): Elaborating entity "Count_reg" for hierarchy "exec_unit:Datapath|Count_reg:count" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 259
-Info (12128): Elaborating entity "shifter7" for hierarchy "exec_unit:Datapath|shifter7:shft" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 262
-Info (12128): Elaborating entity "mux_8to1_1b" for hierarchy "exec_unit:Datapath|mux_8to1_1b:LSbit" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 265
-Info (12128): Elaborating entity "state_control" for hierarchy "state_control:FSM_control" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 61
+Info (12128): Elaborating entity "exec_unit" for hierarchy "exec_unit:Datapath" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 54
+Warning (10541): VHDL Signal Declaration warning at exec_unit.vhdl(208): used implicit default value for signal "mem_a_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 208
+Info (12128): Elaborating entity "reg" for hierarchy "exec_unit:Datapath|reg:store_reg" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 217
+Info (12128): Elaborating entity "mux_2to1_16b" for hierarchy "exec_unit:Datapath|mux_2to1_16b:mem_a_mux" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 218
+Info (12128): Elaborating entity "memory" for hierarchy "exec_unit:Datapath|memory:memory_block" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 219
+Info (12128): Elaborating entity "demux_2to1_16b" for hierarchy "exec_unit:Datapath|demux_2to1_16b:mem_demux" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 220
+Info (12128): Elaborating entity "ALU" for hierarchy "exec_unit:Datapath|ALU:ALunit" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 224
+Warning (10631): VHDL Process Statement warning at ALU.vhdl(24): inferring latch(es) for signal or variable "c_out", which holds its previous value in one or more paths through the process File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/ALU.vhdl Line: 24
+Info (10041): Inferred latch for "c_out" at ALU.vhdl(24) File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/Datapath-Components/ALU.vhdl Line: 24
+Info (12128): Elaborating entity "mux_2to1_1b" for hierarchy "exec_unit:Datapath|mux_2to1_1b:opmux" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 225
+Info (12128): Elaborating entity "CCR" for hierarchy "exec_unit:Datapath|CCR:flag_unit" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 226
+Info (12128): Elaborating entity "mux_4to1_16b" for hierarchy "exec_unit:Datapath|mux_4to1_16b:Balu_mux" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 230
+Info (12128): Elaborating entity "inverter_16" for hierarchy "exec_unit:Datapath|inverter_16:inv1" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 232
+Info (12128): Elaborating entity "sign_extend_6_16" for hierarchy "exec_unit:Datapath|sign_extend_6_16:sign_ex6_16" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 234
+Info (12128): Elaborating entity "sign_extend_9_16" for hierarchy "exec_unit:Datapath|sign_extend_9_16:sign_ex9_16" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 235
+Info (12128): Elaborating entity "reg_file" for hierarchy "exec_unit:Datapath|reg_file:RegisterFile" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 248
+Info (12128): Elaborating entity "mux_2to1_3b" for hierarchy "exec_unit:Datapath|mux_2to1_3b:ao1_mux" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 249
+Info (12128): Elaborating entity "mux_4to1_3b" for hierarchy "exec_unit:Datapath|mux_4to1_3b:rg_mux" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 255
+Info (12128): Elaborating entity "Count_reg" for hierarchy "exec_unit:Datapath|Count_reg:count" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 259
+Info (12128): Elaborating entity "shifter7" for hierarchy "exec_unit:Datapath|shifter7:shft" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 262
+Info (12128): Elaborating entity "mux_8to1_1b" for hierarchy "exec_unit:Datapath|mux_8to1_1b:LSbit" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/exec_unit.vhdl Line: 265
+Info (12128): Elaborating entity "state_control" for hierarchy "state_control:FSM_control" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 61
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 10
-    Warning (15610): No output dependent on input pin "reset" File: C:/Users/prate/Downloads/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 10
+    Warning (15610): No output dependent on input pin "clock" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 10
+    Warning (15610): No output dependent on input pin "reset" File: C:/Users/prate/Desktop/IITB-RISC/VHDL-Files/IITB_RISC.vhdl Line: 10
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4751 megabytes
-    Info: Processing ended: Sun May 08 23:58:04 2022
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:44
+    Info: Peak virtual memory: 4759 megabytes
+    Info: Processing ended: Sun May 22 03:11:37 2022
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:35
 
 
