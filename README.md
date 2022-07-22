@@ -1,7 +1,7 @@
 # IITB-RISC
 The IITB-RISC is an 8-register, 16-bit computer system. 
 
-It has 8 general-purpose registers (R0 to R7). Register R7 is always stores Program Counter. 
+It has 8 general-purpose registers (R0 to R7). Register R7 always stores Program Counter. 
 
 All addresses are short word addresses (i.e., address 0 corresponds to the first two bytes of main memory, address 1 corresponds to the second two bytes of main memory, etc.). 
 
